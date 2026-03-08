@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "688cec86e4ed8bc7487746ea"
+  },
+  "name": "Blog",
+  "slug": "blog",
+  "description": "Blog",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-08-01T16:34:14.261Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-01T16:34:14.261Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "688cf057e4ed8bc748774789"
+  },
+  "name": "Kiều By Kita",
+  "slug": "kieu-by-kita",
+  "description": "",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-08-01T16:50:31.779Z"
+  },
+  "updatedAt": {
+    "$date": "2025-08-01T16:50:31.779Z"
+  },
+  "__v": 0
+}]

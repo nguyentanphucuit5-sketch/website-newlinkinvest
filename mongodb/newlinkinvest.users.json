@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "688ceb2ee4ed8bc7487746a7"
+  },
+  "fullName": "Admin NIC",
+  "email": "admin@gmail.com",
+  "password": "$2a$12$jcUJRTdlmsDb0WVqIVx2ru5km01AiqxoM4zugHylfztenqluE5A5m",
+  "bio": "",
+  "skill": [
+    ""
+  ],
+  "social": [],
+  "isDeleted": false,
+  "deletedAt": null,
+  "emailVerified": true,
+  "isOnline": false,
+  "lastOnlineAt": null,
+  "street": "",
+  "__v": 0,
+  "role": "admin"
+}]

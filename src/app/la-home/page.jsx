@@ -76,9 +76,7 @@ const LaHome = () => {
       <GiaoDiem />
       <TienIch />
       <SanPham />
-      <div id="lien-he">
-        <LienHe />
-      </div>
+      <LienHe />
 
     </div>
   );

@@ -1,16 +1,40 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useLenis } from "../Lenis";
 
 const HeaderLaHome = () => {
     const lenis = useLenis();
+    const [isVisible, setIsVisible] = useState(true);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
+    useEffect(() => {
+        const formEl = document.getElementById("lien-he");
+        if (!formEl) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsVisible(!entry.isIntersecting);
+            },
+            { threshold: 0.15 }
+        );
+
+        observer.observe(formEl);
+        return () => observer.disconnect();
+    }, []);
 
     const scrollToContact = () => {
-        if (lenis) {
-            lenis.scrollTo("bottom", { duration: 1.5 });
-        } else {
-            window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-        }
+        const target = document.getElementById("lien-he");
+        if (!target) return;
+        if (lenis) lenis.stop();
+        target.scrollIntoView({ behavior: "smooth" });
+        if (lenis) setTimeout(() => lenis.start(), 1500);
     };
 
     return (
@@ -18,8 +42,8 @@ const HeaderLaHome = () => {
             onClick={scrollToContact}
             style={{
                 position: "fixed",
-                bottom: "40px",
-                right: "40px",
+                bottom: isMobile ? "20px" : "40px",
+                right: isMobile ? "20px" : "40px",
                 zIndex: 1000,
                 display: "inline-flex",
                 height: "42px",
@@ -39,6 +63,8 @@ const HeaderLaHome = () => {
                 transition: "all 0.3s ease",
                 whiteSpace: "nowrap",
                 boxShadow: "0 4px 15px rgba(0, 72, 73, 0.4)",
+                opacity: isVisible ? 1 : 0,
+                pointerEvents: isVisible ? "auto" : "none",
             }}
             onMouseEnter={(e) => {
                 e.target.style.background = "#05A89D";
@@ -60,3 +86,4 @@ const HeaderLaHome = () => {
 };
 
 export default HeaderLaHome;
+

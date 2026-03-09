@@ -81,7 +81,7 @@ const LienHe = () => {
           style={{ width: "100%", height: "auto", borderRadius: "8px", objectFit: "cover" }}
         />
       </div>
-      <div className="relative">
+      <div id="lien-he" className="relative">
         <Image
           src={bg}
           alt="Background Liên Hệ LaHome - NewLink Investment"

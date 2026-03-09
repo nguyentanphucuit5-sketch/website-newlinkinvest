@@ -1,6 +1,7 @@
-import BackNic from "@/components/BackNic";
+
 import BackgroundLaHome from "@/components/La-Home/BackgroundLaHome";
 import GiaoDiem from "@/components/La-Home/GiaoDiem";
+import HeaderLaHome from "@/components/La-Home/HeaderLaHome";
 import ItemDuAn from "@/components/La-Home/ItemDuAn";
 import LienHe from "@/components/La-Home/LienHe";
 import NhaDauTu from "@/components/La-Home/NhaDauTu";
@@ -57,7 +58,7 @@ export const metadata = {
 };
 
 const LaHome = () => {
-  
+
   return (
     <div
       style={{
@@ -66,6 +67,7 @@ const LaHome = () => {
       }}
       className="relative"
     >
+      <HeaderLaHome />
       <BackgroundLaHome />
       <NhaDauTu />
       <TongQuan />
@@ -74,8 +76,10 @@ const LaHome = () => {
       <GiaoDiem />
       <TienIch />
       <SanPham />
-      <LienHe />
-      <BackNic />
+      <div id="lien-he">
+        <LienHe />
+      </div>
+
     </div>
   );
 };

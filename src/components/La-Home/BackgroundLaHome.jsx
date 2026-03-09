@@ -5,10 +5,11 @@ import logo from "../../assets/lahome/logo.png";
 import Image from "next/image";
 import { motion } from "motion/react";
 import useTrackUserIP from "@/hooks/TrackerIP/useTrackUserIP";
+import Menu from "../Menu";
 
 const BackgroundLaHome = () => {
-   useTrackUserIP(); 
-  
+  useTrackUserIP();
+
   // Animation variants for the background image
   const bgVariants = {
     initial: { scale: 1.1, opacity: 0 },
@@ -56,6 +57,11 @@ const BackgroundLaHome = () => {
             "linear-gradient(0deg, rgba(5, 168, 157, 0) 0%, rgba(5, 168, 157, 0.5) 35%, rgba(5, 168, 157, 1) 100%)",
         }}
       ></div>
+      <div className="absolute top-0 left-0 w-full z-50">
+        <div className="max-w-[1240px] mx-auto py-5 px-1 md:px-0">
+          <Menu />
+        </div>
+      </div>
       <div className="absolute top-0 left-0 w-full h-[35vh] md:h-[40vh] flex flex-col justify-center items-center space-y-3">
         <motion.div variants={logoVariants} initial="initial" animate="animate">
           <Image
